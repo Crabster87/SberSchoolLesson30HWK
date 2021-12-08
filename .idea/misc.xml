@@ -3,7 +3,18 @@
   <component name="DesignSurface">
     <option name="filePathToZoomLevelMap">
       <map>
-        <entry key="..\:/Users/iar87/Desktop/Projects/SberSchoolLesson30HWK/app/src/main/res/layout/activity_main.xml" value="0.1" />
+        <entry key="..\:/Users/iar87/Desktop/Projects/SberSchoolLesson30HWK/app/src/main/res/drawable-v24/ic_add.xml" value="0.1" />
+        <entry key="..\:/Users/iar87/Desktop/Projects/SberSchoolLesson30HWK/app/src/main/res/drawable-v24/ic_app.xml" value="0.1" />
+        <entry key="..\:/Users/iar87/Desktop/Projects/SberSchoolLesson30HWK/app/src/main/res/drawable-v24/ic_close.xml" value="0.1" />
+        <entry key="..\:/Users/iar87/Desktop/Projects/SberSchoolLesson30HWK/app/src/main/res/drawable-v24/ic_launcher_foreground.xml" value="0.1" />
+        <entry key="..\:/Users/iar87/Desktop/Projects/SberSchoolLesson30HWK/app/src/main/res/drawable-v24/ic_ok.xml" value="0.1" />
+        <entry key="..\:/Users/iar87/Desktop/Projects/SberSchoolLesson30HWK/app/src/main/res/layout/activity_main.xml" value="0.18" />
+        <entry key="..\:/Users/iar87/Desktop/Projects/SberSchoolLesson30HWK/app/src/main/res/layout/dialog_error.xml" value="0.16" />
+        <entry key="..\:/Users/iar87/Desktop/Projects/SberSchoolLesson30HWK/app/src/main/res/layout/fragment_add_dictionary_item.xml" value="0.12" />
+        <entry key="..\:/Users/iar87/Desktop/Projects/SberSchoolLesson30HWK/app/src/main/res/layout/fragment_dictionary.xml" value="0.33" />
+        <entry key="..\:/Users/iar87/Desktop/Projects/SberSchoolLesson30HWK/app/src/main/res/layout/fragment_gallery.xml" value="0.1" />
+        <entry key="..\:/Users/iar87/Desktop/Projects/SberSchoolLesson30HWK/app/src/main/res/layout/item_dictionary.xml" value="0.1" />
+        <entry key="..\:/Users/iar87/Desktop/Projects/SberSchoolLesson30HWK/app/src/main/res/layout/item_image.xml" value="0.1" />
       </map>
     </option>
   </component>
