@@ -15,7 +15,6 @@ class DictionaryConverterImpl : IDictionaryConverter {
             logo = dictionaryItem.logo
         )
 
-
     override fun reverse(dictionaryItemModel: DictionaryItemModel) =
         DictionaryItem(
             keyword = dictionaryItemModel.keyword,

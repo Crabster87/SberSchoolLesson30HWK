@@ -5,7 +5,6 @@ import android.content.Context
 import crabster.rudakov.sberschoollesson30hwk.di.AppComponent
 import crabster.rudakov.sberschoollesson30hwk.di.DaggerAppComponent
 
-
 class MainApp : Application() {
 
     lateinit var appComponent: AppComponent
@@ -14,6 +13,7 @@ class MainApp : Application() {
         super.attachBaseContext(base)
         appComponent = DaggerAppComponent.factory().create(this)
     }
+
 }
 
 /**

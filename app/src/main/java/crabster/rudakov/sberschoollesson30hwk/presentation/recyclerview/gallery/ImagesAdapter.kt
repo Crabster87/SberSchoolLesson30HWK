@@ -1,5 +1,6 @@
 package crabster.rudakov.sberschoollesson30hwk.presentation.recyclerview.gallery
 
+import android.annotation.SuppressLint
 import android.net.Uri
 import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
@@ -11,6 +12,7 @@ class ImagesAdapter(private val pickImage: (Uri) -> Unit) :
     RecyclerView.Adapter<ImageViewHolder>() {
     private var imagesList: List<Uri> = arrayListOf()
 
+    @SuppressLint("NotifyDataSetChanged")
     fun setGalleryImages(imagesList: List<Uri>) {
         this.imagesList = imagesList
         notifyDataSetChanged()

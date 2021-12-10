@@ -54,10 +54,9 @@ class DictionaryRepositoryImpl(
             logo = getString(getColumnIndex(LOGO))
         )
 
-
     override fun delete(id: Long): Completable {
         return Completable.fromAction {
-            contentResolver.delete(TRANSLATES_CONTENT_URI, "$_ID = $id", null )
+            contentResolver.delete(TRANSLATES_CONTENT_URI, "$_ID = $id", null)
         }
     }
 

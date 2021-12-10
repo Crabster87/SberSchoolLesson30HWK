@@ -10,7 +10,6 @@ import com.bumptech.glide.Glide
 import crabster.rudakov.sberschoollesson30hwk.databinding.ItemDictionaryBinding
 import crabster.rudakov.sberschoollesson30hwk.domain.repositories.models.DictionaryItemModel
 
-
 class DictionaryViewHolder(
     private val binding: ItemDictionaryBinding,
     private val deleteDictionary: (Long) -> Unit
@@ -29,7 +28,7 @@ class DictionaryViewHolder(
             showDelete()
 
             binding.deleteClose.setOnClickListener {
-               deleteCloseClick(dictionaryItemModel.keyword)
+                deleteCloseClick(dictionaryItemModel.keyword)
             }
 
             binding.deleteOk.setOnClickListener {
@@ -39,8 +38,6 @@ class DictionaryViewHolder(
             return@setOnLongClickListener true
         }
     }
-
-
 
     private fun showDelete() {
         binding.itemKeyword.text = "Удалить?"
@@ -88,7 +85,6 @@ class DictionaryViewHolder(
             })
         }
     }
-
 
     companion object {
         fun create(parent: ViewGroup, deleteDictionary: (Long) -> Unit): DictionaryViewHolder {

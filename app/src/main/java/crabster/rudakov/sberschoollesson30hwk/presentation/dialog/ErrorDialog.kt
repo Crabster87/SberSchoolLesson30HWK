@@ -7,7 +7,6 @@ import android.view.LayoutInflater
 import androidx.fragment.app.DialogFragment
 import crabster.rudakov.sberschoollesson30hwk.databinding.DialogErrorBinding
 
-
 /**
  * Error dialog for showing message
  */

@@ -8,7 +8,7 @@ android {
     compileSdk 31
 
     defaultConfig {
-        applicationId "com.example.contentproviderapp"
+        applicationId "crabster.rudakov.sberschoollesson30hwk"
         minSdk 22
         targetSdk 31
         versionCode 1
@@ -38,9 +38,9 @@ android {
 dependencies {
 
     implementation 'androidx.core:core-ktx:1.7.0'
-    implementation 'androidx.appcompat:appcompat:1.3.1'
+    implementation 'androidx.appcompat:appcompat:1.4.0'
     implementation 'com.google.android.material:material:1.4.0'
-    implementation 'androidx.constraintlayout:constraintlayout:2.1.1'
+    implementation 'androidx.constraintlayout:constraintlayout:2.1.2'
 
     //Navigation
     implementation 'androidx.navigation:navigation-fragment-ktx:2.3.5'
@@ -51,8 +51,8 @@ dependencies {
     implementation 'io.reactivex.rxjava3:rxjava:3.0.13'
 
     //Dagger
-    implementation 'com.google.dagger:dagger:2.36'
-    kapt 'com.google.dagger:dagger-compiler:2.36'
+    implementation 'com.google.dagger:dagger:2.38.1'
+    kapt 'com.google.dagger:dagger-compiler:2.38.1'
 
     //Glide
     implementation 'com.github.bumptech.glide:glide:4.12.0'
@@ -60,7 +60,6 @@ dependencies {
 
     //lottie
     implementation "com.airbnb.android:lottie:4.2.0"
-
 
     testImplementation 'junit:junit:4.+'
     androidTestImplementation 'androidx.test.ext:junit:1.1.3'

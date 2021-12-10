@@ -22,19 +22,19 @@ import dagger.Provides
 abstract class AppBindModule {
 
     @Binds
-    abstract fun bindDictionaryRepositoryImpl_to_IDictionaryRepository(dictionaryRepositoryImpl: DictionaryRepositoryImpl): IDictionaryRepository
+    abstract fun bindDictionaryRepositoryImplToIDictionaryRepository(dictionaryRepositoryImpl: DictionaryRepositoryImpl): IDictionaryRepository
 
     @Binds
-    abstract fun bindDictionaryInteractorImpl_to_IDictionaryInteractor(dictionaryInteractorImpl: DictionaryInteractorImpl): IDictionaryInteractor
+    abstract fun bindDictionaryInteractorImplToIDictionaryInteractor(dictionaryInteractorImpl: DictionaryInteractorImpl): IDictionaryInteractor
 
     @Binds
-    abstract fun bindDictionaryConverterImpl_to_IDictionaryConverter(dictionaryConverterImpl: DictionaryConverterImpl): IDictionaryConverter
+    abstract fun bindDictionaryConverterImplToIDictionaryConverter(dictionaryConverterImpl: DictionaryConverterImpl): IDictionaryConverter
 
     @Binds
-    abstract fun bindLocalImageRepositoryImpl_to_ILocalImageRepository(localImageRepository: LocalImageRepositoryImpl): ILocalImageRepository
+    abstract fun bindLocalImageRepositoryImplToILocalImageRepository(localImageRepository: LocalImageRepositoryImpl): ILocalImageRepository
 
     @Binds
-    abstract fun bindLocalImageInteractiorImpl_to_ILocalImageInteractor(localImageInteractorImplImpl: LocalImageInteractorImpl): ILocalImageInteractor
+    abstract fun bindLocalImageInteractiorImplToILocalImageInteractor(localImageInteractorImplImpl: LocalImageInteractorImpl): ILocalImageInteractor
 
 }
 
@@ -42,13 +42,12 @@ abstract class AppBindModule {
 class AppModule {
 
     @Provides
-    fun provideContentResolver(application: Application) = application.contentResolver
+    fun provideContentResolver(application: Application): ContentResolver =
+        application.contentResolver
 
     @Provides
-    fun provideDataBaseOpenHelper(application: Application) = DataBaseOpenHelper(application.applicationContext)
-
-    /*@Provides
-    fun provideDictionaryContentProvider(dataBaseOpenHelper: DataBaseOpenHelper) = DictionaryContentProvider(dataBaseOpenHelper)*/
+    fun provideDataBaseOpenHelper(application: Application) =
+        DataBaseOpenHelper(application.applicationContext)
 
 }
 
@@ -59,23 +58,23 @@ class DomainModule {
     fun provideDictionaryConverter() = DictionaryConverterImpl()
 
     @Provides
-    fun provideDictionaryRepository(contentResolver: ContentResolver) = DictionaryRepositoryImpl(contentResolver)
+    fun provideDictionaryRepository(contentResolver: ContentResolver) =
+        DictionaryRepositoryImpl(contentResolver)
 
     @Provides
     fun provideDictionaryInteractor(
         repository: IDictionaryRepository,
-        converter: IDictionaryConverter
-    ) =
-        DictionaryInteractorImpl(repository, converter)
+        converter: IDictionaryConverter) = DictionaryInteractorImpl(repository, converter)
 
     @Provides
-    fun provideLocalImageRepository(contentResolver: ContentResolver) = LocalImageRepositoryImpl(contentResolver)
+    fun provideLocalImageRepository(contentResolver: ContentResolver) =
+        LocalImageRepositoryImpl(contentResolver)
 
     @Provides
-    fun provideLocalImageInteractor(localImageRepository: ILocalImageRepository) = LocalImageInteractorImpl(localImageRepository)
+    fun provideLocalImageInteractor(localImageRepository: ILocalImageRepository) =
+        LocalImageInteractorImpl(localImageRepository)
 
 }
-
 
 @Module(includes = [DomainModule::class])
 class ViewModelFactoryModule {
@@ -88,4 +87,5 @@ class ViewModelFactoryModule {
     ): ViewModelFactory {
         return ViewModelFactory(application, dictionaryInteractor, localImageInteractor)
     }
+
 }

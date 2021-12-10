@@ -12,11 +12,10 @@ import io.reactivex.rxjava3.android.schedulers.AndroidSchedulers
 import io.reactivex.rxjava3.disposables.CompositeDisposable
 import io.reactivex.rxjava3.schedulers.Schedulers
 
-
 /**
  * Implementation of SharedViewModel
- * @param dictionaryInteractor - interactor for getting data from [com.example.contentproviderapp.data.datastore.provider.DictionaryContentProvider]
- * @param localImageInteractor - interactor for getting pictures from Media Cpntent Provider
+ * @param dictionaryInteractor - interactor for getting data from [crabster/rudakov/sberschoollesson30hwk/data/datastores/providers/DictionaryContentProvider]
+ * @param localImageInteractor - interactor for getting pictures from Media Content Provider
  */
 class SharedViewModel(
     private val dictionaryInteractor: IDictionaryInteractor,
@@ -27,7 +26,7 @@ class SharedViewModel(
     private val _dictionaryItemsLiveData = MutableLiveData<List<DictionaryItemModel>>()
     private val _dictionaryItemsProgressLiveData = MutableLiveData<Boolean>()
     private val _dictionaryItemsErrorLiveData = MutableLiveData<Throwable?>()
-    private val _completeAddingDictionaryItemsLiveData = MutableLiveData<Boolean>(false)
+    private val _completeAddingDictionaryItemsLiveData = MutableLiveData(false)
     private val _localImageLiveData = MutableLiveData<List<Uri>>()
     private val _localImageProgressLiveData = MutableLiveData<Boolean>()
     private val _localImageErrorLiveData = MutableLiveData<Throwable?>()
@@ -50,12 +49,11 @@ class SharedViewModel(
     val selectedImageLiveData: LiveData<Uri>
         get() = _selectedImageLiveData
 
-
     // CompositeDisposable to subscribe and unsubscribe receiving data in Rx
     private val compositeDisposable = CompositeDisposable()
 
     /**
-     * Load data from [com.example.contentproviderapp.data.datastore.provider.DictionaryContentProvider]
+     * Load data from [crabster/rudakov/sberschoollesson30hwk/data/datastores/providers/DictionaryContentProvider]
      */
     fun loadDataAsyncRx() {
         val disposable = dictionaryInteractor.getList()
@@ -77,7 +75,7 @@ class SharedViewModel(
 
 
     /**
-     * Add data to [com.example.contentproviderapp.data.datastore.provider.DictionaryContentProvider]
+     * Add data to [crabster/rudakov/sberschoollesson30hwk/data/datastores/providers/DictionaryContentProvider]
      */
     fun addToDictionary(dictionaryItem: DictionaryItem) {
         val disposable = dictionaryInteractor.add(dictionaryItem)
@@ -90,7 +88,7 @@ class SharedViewModel(
     }
 
     /**
-     * Delete data from [com.example.contentproviderapp.data.datastore.provider.DictionaryContentProvider]
+     * Delete data from [crabster/rudakov/sberschoollesson30hwk/data/datastores/providers/DictionaryContentProvider]
      */
     fun deleteDictionary(id: Long) {
         val disposable = dictionaryInteractor.delete(id)
@@ -105,7 +103,7 @@ class SharedViewModel(
     }
 
     /**
-     * Delete data from Media Cpntent Provider
+     * Delete data from Media Content Provider
      */
     fun getLocalImagesAsyncRx() {
         val disposable = localImageInteractor.getLocalImages()

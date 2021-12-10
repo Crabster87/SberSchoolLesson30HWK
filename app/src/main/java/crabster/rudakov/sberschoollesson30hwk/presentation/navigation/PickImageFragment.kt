@@ -137,7 +137,6 @@ class PickImageFragment : BottomSheetDialogFragment() {
         dialog?.cancel()
     }
 
-
     /**
      * Request result of external permission
      */
@@ -147,10 +146,9 @@ class PickImageFragment : BottomSheetDialogFragment() {
         grantResults: IntArray
     ) {
         requestExternalPermissionsResult(
-            requestCode, permissions, grantResults, sharedViewModel::getLocalImagesAsyncRx
+            requestCode, grantResults, sharedViewModel::getLocalImagesAsyncRx
         )
     }
-
 
     override fun onDestroyView() {
         super.onDestroyView()

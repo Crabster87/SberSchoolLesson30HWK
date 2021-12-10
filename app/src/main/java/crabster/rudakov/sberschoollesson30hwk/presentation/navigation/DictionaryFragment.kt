@@ -21,7 +21,7 @@ import javax.inject.Inject
 /**
  * Fragment for showing dictionary items
  */
-class DictionaryFragment: Fragment() {
+class DictionaryFragment : Fragment() {
 
     private var _binding: FragmentDictionaryBinding? = null
     private val binding
@@ -29,6 +29,7 @@ class DictionaryFragment: Fragment() {
 
     @Inject
     lateinit var viewModelFactory: ViewModelFactory
+
     // Lazy implementation of sharedViewModel by AndroidViewModelFactory
     private val sharedViewModel by activityViewModels<SharedViewModel> { viewModelFactory }
 
@@ -64,12 +65,13 @@ class DictionaryFragment: Fragment() {
                 binding.loading.visibility = View.GONE
             }
         }
+
         sharedViewModel.dictionaryItemsLiveData.observe(viewLifecycleOwner) { items ->
-           if (items.isNullOrEmpty()) {
-               showEmptyImage()
-           } else {
-               showDictionary()
-           }
+            if (items.isNullOrEmpty()) {
+                showEmptyImage()
+            } else {
+                showDictionary()
+            }
             adapter.submitList(items)
 
         }
@@ -80,8 +82,6 @@ class DictionaryFragment: Fragment() {
             it.findNavController().navigate(R.id.action_wordsFragment_to_addWordFragment)
         }
     }
-
-
 
     private fun showEmptyImage() {
         binding.rvWords.visibility = View.GONE
@@ -94,7 +94,6 @@ class DictionaryFragment: Fragment() {
         binding.emptyImage.visibility = View.GONE
         binding.emptyText.visibility = View.GONE
     }
-
 
     override fun onDestroyView() {
         super.onDestroyView()

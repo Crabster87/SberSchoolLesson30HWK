@@ -12,10 +12,9 @@ import androidx.core.app.ActivityCompat
 import androidx.fragment.app.DialogFragment
 import crabster.rudakov.sberschoollesson30hwk.R
 
-
 object ExternalStoragePermission {
 
-    private val STORAGE_REQUEST_CODE = 98
+    private const val STORAGE_REQUEST_CODE = 98
 
     /**
      * Check External Storage permission
@@ -42,7 +41,6 @@ object ExternalStoragePermission {
      */
     fun DialogFragment.requestExternalPermissionsResult(
         requestCode: Int,
-        permissions: Array<out String>,
         grantResults: IntArray,
         loadImages: () -> Unit
     ) {

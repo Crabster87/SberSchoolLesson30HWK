@@ -5,7 +5,6 @@ import androidx.recyclerview.widget.ListAdapter
 import crabster.rudakov.sberschoollesson30hwk.domain.repositories.models.DictionaryItemModel
 import crabster.rudakov.sberschoollesson30hwk.presentation.recyclerview.dictionary.diffutil.DictionaryItemDiffUtils
 
-
 /**
  * Adapter for dictionary items
  */

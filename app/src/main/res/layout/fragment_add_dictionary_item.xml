@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="utf-8"?>
 <androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    xmlns:app="http://schemas.android.com/apk/res-auto">
+    android:layout_height="match_parent">
 
     <androidx.constraintlayout.widget.Guideline
         android:id="@+id/guideline_start"
@@ -35,15 +35,14 @@
         app:layout_constraintTop_toTopOf="parent" />
 
     <androidx.appcompat.widget.AppCompatTextView
+        style="@style/FragmentTitleStyle"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="@string/add_word_fragment_title"
-        style="@style/FragmentTitleStyle"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintBottom_toBottomOf="@id/guideline_toolbar"
-        app:layout_constraintTop_toTopOf="parent"
-        />
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
 
     <com.google.android.material.textfield.TextInputLayout
         android:id="@+id/keyword_layout"
@@ -62,8 +61,7 @@
             style="@style/InputEditTextStyle"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:digits="абвгдеёжзийклмнопрстуфхцчшщъыьэюя АБВГДЕЁЖЗИЙКЛМНОПРСТУФХЦЧШЩЪЫЬЭЮЯ"
-            />
+            android:digits="абвгдеёжзийклмнопрстуфхцчшщъыьэюя АБВГДЕЁЖЗИЙКЛМНОПРСТУФХЦЧШЩЪЫЬЭЮЯ" />
 
     </com.google.android.material.textfield.TextInputLayout>
 
@@ -84,8 +82,7 @@
             style="@style/InputEditTextStyle"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:digits="abcdefghijklmnopqrstuvwxyz ABCDEFGHIJKLMNOPQRSTUVWXYZ"
-            />
+            android:digits="abcdefghijklmnopqrstuvwxyz ABCDEFGHIJKLMNOPQRSTUVWXYZ" />
 
     </com.google.android.material.textfield.TextInputLayout>
 
@@ -95,34 +92,31 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="@string/pick_image"
-        app:layout_constraintStart_toStartOf="@id/guideline_start"
-        app:layout_constraintTop_toTopOf="@id/logo"
         app:layout_constraintBottom_toBottomOf="@id/logo"
-        />
+        app:layout_constraintStart_toStartOf="@id/guideline_start"
+        app:layout_constraintTop_toTopOf="@id/logo" />
 
     <com.google.android.material.imageview.ShapeableImageView
         android:id="@+id/logo"
         android:layout_width="54dp"
         android:layout_height="54dp"
         android:layout_marginTop="30dp"
-        app:layout_constraintTop_toBottomOf="@id/translate_layout"
-        app:layout_constraintEnd_toEndOf="@id/guideline_end"
         android:scaleType="centerCrop"
-        app:shapeAppearance="@style/roundedImageViewRounded"
-        />
+        app:layout_constraintEnd_toEndOf="@id/guideline_end"
+        app:layout_constraintTop_toBottomOf="@id/translate_layout"
+        app:shapeAppearance="@style/roundedImageViewRounded" />
 
     <com.google.android.material.button.MaterialButton
         android:id="@+id/add_to_dictionary"
         style="@style/AddToDictionaryButtonStyle"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_margin="20dp"
         android:paddingHorizontal="15dp"
         android:paddingVertical="15dp"
-        android:layout_margin="20dp"
         android:text="@string/add_to_dictionary"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintBottom_toBottomOf="parent"
-        />
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

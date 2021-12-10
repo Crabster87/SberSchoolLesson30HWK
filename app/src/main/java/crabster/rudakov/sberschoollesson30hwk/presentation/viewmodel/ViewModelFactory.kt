@@ -6,7 +6,6 @@ import androidx.lifecycle.ViewModelProvider
 import crabster.rudakov.sberschoollesson30hwk.domain.interactors.IDictionaryInteractor
 import crabster.rudakov.sberschoollesson30hwk.domain.interactors.ILocalImageInteractor
 
-
 class ViewModelFactory(
     application: Application,
     private val dictionaryInteractor: IDictionaryInteractor,

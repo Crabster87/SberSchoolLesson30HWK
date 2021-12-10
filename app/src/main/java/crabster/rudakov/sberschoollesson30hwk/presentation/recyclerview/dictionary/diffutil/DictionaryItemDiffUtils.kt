@@ -3,12 +3,10 @@ package crabster.rudakov.sberschoollesson30hwk.presentation.recyclerview.diction
 import androidx.recyclerview.widget.DiffUtil
 import crabster.rudakov.sberschoollesson30hwk.domain.repositories.models.DictionaryItemModel
 
-
 /**
  * Diff Util for [DictionaryItemModel] class
  */
-class DictionaryItemDiffUtils(
-) : DiffUtil.ItemCallback<DictionaryItemModel>() {
+class DictionaryItemDiffUtils : DiffUtil.ItemCallback<DictionaryItemModel>() {
 
     override fun areItemsTheSame(
         oldItem: DictionaryItemModel,
